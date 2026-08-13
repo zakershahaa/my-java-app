@@ -1,0 +1,17 @@
+4.0.0
+
+    com.example
+    my-java-app
+    1.0-SNAPSHOT
+
+    
+        17
+        17
+    
+
+    
+        
+            org.junit.jupiter
+            junit-jupiter-api
+            5.10.0
+            test
