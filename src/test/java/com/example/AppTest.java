@@ -7,7 +7,6 @@ public class AppTest {
     @Test
     public void testGreeting() {
         App app = new App();
-        // Intentionally wrong expected string
-        assertEquals("Wrong Greeting!", app.getGreeting()); 
+        assertEquals("Hello, GitHub Actions!", app.getGreeting()); 
     }
 }
