@@ -1,0 +1,29 @@
+name: Java CI Pipeline
+
+# Trigger rule: Yeh pipeline tab chalegi jab main branch par push ya pull request aayegi
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # GitHub ka virtual server (Ubuntu) use hoga
+
+    steps:
+    # Step 1: Aapka code virtual server par clone karna
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # Step 2: Java 17 install karna
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    # Step 3: Maven se project Build aur Test karna
+    - name: Build and Test with Maven
+      run: mvn clean test
